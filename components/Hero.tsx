@@ -67,8 +67,8 @@ const Hero = () => {
 
       {/* next part of hero */}
       <div className="px-34">
-      <div className="bg-[#FFF] flex items-center justify-center space-x-7 w-[700px] py-4 mx-auto">
-        <div className="flex items-center space-x-2">
+      <div className="bg-[#FFF] flex items-center justify-center space-x-7 w-[350px] lg:w-[700px] py-4 mx-auto px-2 lg:px-0 mt-2 lg:mt-0">
+        <div className="lg:flex items-center space-x-2 space-y-1">
           <div className="">
             <Image src={box} alt="box" width={36} height={36} />
           </div>
@@ -77,7 +77,7 @@ const Hero = () => {
             <p className="text-[#9A9CAA] text-[8px] font-normal">Every week new sales </p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="lg:flex items-center space-x-2 space-y-1">
           <div className="">
             <Image src={vector} alt="vector" width={36} height={36} />
           </div>
@@ -86,7 +86,7 @@ const Hero = () => {
             <p className="text-[#9A9CAA] text-[8px] font-normal">100% Free for all orders</p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="lg:flex items-center space-x-2 space-y-1">
           <div className="">
             <Image src={hour} alt="hour" width={36} height={36} />
           </div>
@@ -95,7 +95,7 @@ const Hero = () => {
             <p className="text-[#9A9CAA] text-[8px] font-normal">We care your experiences</p>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="lg:flex items-center space-x-2 space-y-1">
           <div className="">
             <Image src={shield} alt="shield" width={36} height={36} />
           </div>
