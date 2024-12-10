@@ -15,7 +15,7 @@ const products = [
   { id: 6, name: "Skateboard Shoe", price: "$125", image: im1 },
   { id: 7, name: "Skateboard Shoe", price: "$125", image: im2 },
   { id: 8, name: "Skateboard Shoe", price: "$125", image: im3 },
-  { id: 8, name: "Skateboard Shoe", price: "$125", image: im5 },
+  { id: 9, name: "Skateboard Shoe", price: "$125", image: im5 },
 ];
 
 const ProductSection = () => {
