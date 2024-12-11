@@ -4,9 +4,17 @@ import React, { useState } from "react";
 import logo from "@/public/image/Group.png";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+   
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
 
   return (
     <nav className="bg-white shadow-md px-4 sm:px-6 lg:px-20 py-4">
@@ -82,7 +90,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4 mt-4 lg:mt-0 text-[#1D242D] opacity-60 text-sm">
-          <a href="#" className="flex items-center space-x-1">
+          {/* <a href="#" className="flex items-center space-x-1">
             All Categories
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +104,60 @@ const Navbar = () => {
                 fill="#1D242D"
               />
             </svg>
-          </a>
+          </a> */}
+          <div className="relative">
+      <a
+        href="#"
+        onClick={toggleDropdown}
+        className="flex items-center space-x-1 cursor-pointer"
+      >
+        <span>All Categories</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="none"
+          viewBox="0 0 30 30"
+        >
+          <path
+            d="M14.7697 19.5698L22.1664 12.1731L20.4274 10.4316L14.7697 16.093L9.11329 10.4316L7.37305 12.1719L14.7697 19.5698Z"
+            fill="#1D242D"
+          />
+        </svg>
+      </a>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute top-full mt-2 bg-white shadow-lg rounded-md w-48 z-10">
+          <ul className="py-2">
+            <li>
+              <a
+                onClick={() => router.push('/User/Profile')}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
+                Profile
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              >
+                Terms of Roles
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
           <a href="#" className="text-gray-700">
             Coupon
           </a>
