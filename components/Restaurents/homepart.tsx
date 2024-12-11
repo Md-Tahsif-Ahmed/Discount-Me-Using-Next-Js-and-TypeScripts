@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import { FiMapPin } from 'react-icons/fi'; // Location Icon
 import { FaStar } from 'react-icons/fa'; // Rating Star Icon
 import Image from 'next/image'; // For optimized image handling
@@ -52,7 +52,7 @@ const Homepart = () => {
             <p className="text-[#758888] mt-2 text-sm">Check your city nearby <br /> restaurants</p>
         </div>
       <div className="flex items-center space-x-2 text-sm">
-        <p >See All </p><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none">
+        <p  onClick={() => router.push('/Restaurants/All')}>See All </p><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21" fill="none">
         <path d="M7.875 4.375L14 10.5L7.875 16.625" stroke="#232323" stroke-linecap="round" stroke-linejoin="round"/>
         </svg></span>
       </div>
