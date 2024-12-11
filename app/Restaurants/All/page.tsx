@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { FiMapPin } from 'react-icons/fi'; // Location Icon
 import { FaMapMarkerAlt, FaSearch, FaStar } from 'react-icons/fa'; // Rating Star Icon
 import Image from 'next/image';
@@ -95,108 +94,118 @@ const AllRestaurantsPage = () => {
       image: im3,
     },
   ];
-  
+
   return (
-      <>
-           <Navbar></Navbar>
-    <div className="px-20 py-8">
-      {/* Header */}
-    <div className="flex items-center justify-between">
-        <div className="">
+    <>
+      <Navbar></Navbar>
+      <div className="px-20 py-8">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div className="">
             <h1 className="text-2xl font-bold text-gray-800">
-                Explore <span className="text-orange-500">Top Restaurants</span>
+              Explore <span className="text-orange-500">Top Restaurants</span>
             </h1>
-            <p className="text-[#758888] mt-2 text-sm">Check your city nearby <br /> restaurants</p>
-        </div>
+            <p className="text-[#758888] mt-2 text-sm">
+              Check your city nearby <br /> restaurants
+            </p>
+          </div>
 
-      {/* Search Bar */}
-      <div className="flex items-center justify-center md:justify-start mt-6">
-              {/* Search Box */}
-              <div className="relative flex items-center w-full max-w-md">
-                {/* Location Icon and Text */}
-                <div className="absolute left-2 flex items-center bg-[#FF7D29] text-white px-4 py-2 rounded-l-full">
-                  <FaMapMarkerAlt size={18} className="mr-2" />
-                  <span className="text-sm">Location</span>
-                  <span className="pl-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
-                  <path d="M5.5 5.5L0.736861 0.249999L10.2631 0.25L5.5 5.5Z" fill="#F8FAFC"/>
+          {/* Search Bar */}
+          <div className="flex items-center justify-center md:justify-start mt-6">
+            {/* Search Box */}
+            <div className="relative flex items-center w-full max-w-md">
+              {/* Location Icon and Text */}
+              <div className="absolute left-2 flex items-center bg-[#FF7D29] text-white px-4 py-2 rounded-l-full">
+                <FaMapMarkerAlt size={18} className="mr-2" />
+                <span className="text-sm">Location</span>
+                <span className="pl-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="11"
+                    height="6"
+                    viewBox="0 0 11 6"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.5 5.5L0.736861 0.249999L10.2631 0.25L5.5 5.5Z"
+                      fill="#F8FAFC"
+                    />
                   </svg>
-                  </span>
-                </div>
-
-                {/* Search Input */}
-                <input
-                  type="text"
-                  placeholder=""
-                  className="w-full pl-32 pr-16 py-3 text-sm text-gray-700 bg-white border border-gray-300 rounded-full focus:ring-2 focus:ring-green-400 focus:outline-none"
-                />
-
-                {/* Search Button */}
-                  <button className="absolute right-2 bg-[#FF7D29] hover:bg-[#FF7D29] text-white p-3 rounded-full">
-                    <FaSearch size={16} />
-                  </button>
-                </div>
-      </div>
-    </div>
-
-       {/* Cards */}
-       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {restaurants.map((restaurant) => (
-          <div
-            key={restaurant.id}
-            className="card w-full bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow"
-          >
-            {/* Card Image */}
-            <Image
-              src={restaurant.image}
-              alt={restaurant.name}
-              className="w-full h-48 object-cover rounded-t-lg"
-              width={300}
-              height={200}
-              priority // Ensures the images load quickly
-            />
-
-            {/* Card Content */}
-            <div className="p-4">
-         <div className="flex items-center justify-between">
-                 {/* Restaurant Name */}
-                 <h3 className="text-lg font-bold text-gray-800">
-                {restaurant.name}
-              </h3>
-                  {/* Rating */}
-              <div className="flex items-center mt-2">
-                <FaStar className="text-yellow-500 mr-1" />
-                <span className="text-sm font-medium">({restaurant.rating})</span>
-              </div>
-         </div>
-              {/* Location */}
-              <div className="flex items-center text-sm text-gray-600 mt-1">
-                <FiMapPin className="mr-1 text-orange-500" />
-                <span>{restaurant.location}</span>
+                </span>
               </div>
 
-              {/* Description */}
-              <p className="text-sm text-gray-600 mt-3 line-clamp-3">
-                {restaurant.description}{" "}
-                <a href="#" className="text-blue-500 hover:underline">
-                  Read More...
-                </a>
-              </p>
+              {/* Search Input */}
+              <input
+                type="text"
+                placeholder=""
+                className="w-full pl-32 pr-16 py-3 text-sm text-gray-700 bg-white border border-gray-300 rounded-full focus:ring-2 focus:ring-green-400 focus:outline-none"
+              />
 
-              {/* Visit Button */}
-              <button
-                onClick={() => router.push(`/restaurants/${restaurant.id}`)}
-                className="mt-4 w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-              >
-                Visit
+              {/* Search Button */}
+              <button className="absolute right-2 bg-[#FF7D29] hover:bg-[#FF7D29] text-white p-3 rounded-full">
+                <FaSearch size={16} />
               </button>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Cards */}
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {restaurants.map((restaurant) => (
+            <div
+              key={restaurant.id}
+              className="card w-full bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow"
+            >
+              {/* Card Image */}
+              <Image
+                src={restaurant.image}
+                alt={restaurant.name}
+                className="w-full h-48 object-cover rounded-t-lg"
+                width={300}
+                height={200}
+                priority // Ensures the images load quickly
+              />
+
+              {/* Card Content */}
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  {/* Restaurant Name */}
+                  <h3 className="text-lg font-bold text-gray-800">
+                    {restaurant.name}
+                  </h3>
+                  {/* Rating */}
+                  <div className="flex items-center mt-2">
+                    <FaStar className="text-yellow-500 mr-1" />
+                    <span className="text-sm font-medium">({restaurant.rating})</span>
+                  </div>
+                </div>
+                {/* Location */}
+                <div className="flex items-center text-sm text-gray-600 mt-1">
+                  <FiMapPin className="mr-1 text-orange-500" />
+                  <span>{restaurant.location}</span>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 mt-3 line-clamp-3">
+                  {restaurant.description}{" "}
+                  <a href="#" className="text-blue-500 hover:underline">
+                    Read More...
+                  </a>
+                </p>
+
+                {/* Visit Button */}
+                <button
+                  className="mt-4 w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                >
+                  Visit
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer></Footer>
-      </>
+      <Footer></Footer>
+    </>
   );
 };
 

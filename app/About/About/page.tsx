@@ -1,11 +1,10 @@
-// import Image from 'next/image';
 import image from '@/public/image/image.png';  // Adjust path accordingly
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const AboutPage = () => {
   return (
-    <>
+    <div>
        <Navbar></Navbar>
         <div className="min-h-screen bg-gray-100">
         {/* Breadcrumb Section with Background Image */}
@@ -21,7 +20,7 @@ const AboutPage = () => {
       <div className="max-w-7xl mx-auto p-6">
         <h1 className="text-4xl font-bold mb-6">About Us</h1>
         <p className="text-lg text-[#758888] mb-4">
-          Welcome to [Your Company Name]. Before using our logo design service, please carefully review the following Terms and Conditions, as they govern the contractual relationship between you (the "Client") and [Your Company Name] (the "Service Provider"). By using our logo design service, you acknowledge that you have read, understood, and agreed to these Terms and Conditions in their entirety.
+          Welcome to [Your Company Name]. Before using our logo design service, please carefully review the following Terms and Conditions, as they govern the contractual relationship between you (the &quot;Client&quot;) and [Your Company Name] (the &quot;Service Provider&quot;). By using our logo design service, you acknowledge that you have read, understood, and agreed to these Terms and Conditions in their entirety.
         </p>
 
         {/* Scope of Service */}
@@ -41,7 +40,7 @@ const AboutPage = () => {
       </div>
     </div>
     <Footer></Footer>
-    </>
+    </div>
   );
 };
 
