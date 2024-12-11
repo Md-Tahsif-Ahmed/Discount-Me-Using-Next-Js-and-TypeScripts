@@ -5,6 +5,7 @@ import logo from "@/public/image/Group.png";
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
+ 
 
 const Navbar = () => {
   const router = useRouter();
@@ -140,7 +141,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="#"
+                onClick={() => router.push('/About/About')}
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
               >
                 About Us
@@ -158,7 +159,7 @@ const Navbar = () => {
         </div>
       )}
     </div>
-          <a href="#" className="text-gray-700">
+          <a onClick={() => router.push('/Coupon/Card')} className="text-gray-700">
             Coupon
           </a>
           <a href="#" className="text-gray-700">
@@ -213,6 +214,8 @@ const Navbar = () => {
           </svg>
         </span>
         <span>
+    
+        <a onClick={() => router.push('/Signup/Create')}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
@@ -229,6 +232,8 @@ const Navbar = () => {
               fill="#1D242D"
             />
           </svg>
+        </a>
+    
         </span>
         </div>
       
